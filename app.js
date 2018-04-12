@@ -1,31 +1,85 @@
-console.log('------ Object-Oriented JavaScript and Prototypal Inheritance -----');
-// classical vs prototypal inheritance
-// inheritance - one object get access to the properties of another objects
-// all objects in JS have a proto property
+//different types of building objects
+console.log('--- Building Objects ---');
+// set a prototype
+// every function has a prototype property it is used when you use function as an object constructor(new)
 
-var person = {
-  firstname: 'Default',
-  lastname: 'Default',
-  getFullName: function(){
-    return this.firstname + ' ' + this.lastname;
-  }
+function Person(firstname, lastname) {
+
+  console.log(this);
+  this.firstname = firstname;
+  this.lastname = lastname;
+  console.log('This funtion is invoked');
+
+}
+
+Person.prototype.getFullName = function(){
+  return this.firstname + ' ' + this.lastname;
 };
 
-var john = {
-  firstname: 'John',
-  lastname: 'Doe',
+var john = new Person('John', 'Smith');
+console.log(john);
+
+
+var jane = new Person('Jane', 'Smith');
+console.log(jane);
+
+Person.prototype.getFormalFullName = function(){
+  return this.lastname + ', ' + this.firstname;
 };
+//form the efficiensy stendpoint it's better to add your methods to the prototype - it's create only one copy of the method
 
-// don't do this EVER! for demo purposees only!!!
-john.__proto__ = person;
-
-console.log(john.getFullName());
-// Reflection
-
-// Extend
-
-console.log('------ Object-Oriented JavaScript and Prototypal Inheritance -----');
-
+// console.log('------ Object-Oriented JavaScript and Prototypal Inheritance -----');
+// // classical vs prototypal inheritance
+// // inheritance - one object get access to the properties of another objects
+// // all objects in JS have a proto property
+//
+// var person = {
+//   firstname: 'Default',
+//   lastname: 'Default',
+//   getFullName: function(){
+//     return this.firstname + ' ' + this.lastname;
+//   }
+// };
+//
+// var john = {
+//   firstname: 'John',
+//   lastname: 'Doe',
+// };
+//
+// // don't do this EVER! for demo purposees only!!!
+// john.__proto__ = person;
+//
+// // console.log(john.getFullName());
+// // Reflection - an object can look at itself, listing and chaining its properties and methods.
+//
+// for (var prop in john){
+//   if (john.hasOwnProperty(prop)){
+//     console.log(prop + ': ' + john[prop]);
+//   }
+// }
+//
+// // Extend -
+//
+// var jane = {
+//   address: '111 Main St',
+//   getFormalFullName: function() {
+//     return this.lastname + ', ' + this.firstname;
+//   }
+// };
+//
+// var jim = {
+//   getFirsName: function() {
+//     return firstname;
+//   }
+// };
+//
+// _.extend(john, jane, jim);
+//
+// console.log(john);
+//
+// console.log('------ Object-Oriented JavaScript and Prototypal Inheritance -----');
+//
+//
 
 // console.log('------ Functional Programming -----');
 // var arr1 = [1,2,3];
