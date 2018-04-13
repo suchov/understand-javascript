@@ -1,5 +1,13 @@
+// Building GREETR
+// When given a frist name, last name, and optional language,
+// it generates formal and informal greetings.
+// Support English and Spanish language.
+// Reusable library/framework.
+// Easy to type structure 'G$()' structure.
+// support jQuery - include it to jQuery prototype?
 
-
+var g = G$('John', 'Shit');
+g.greet().setLang('es').greet(true);
 
 // //different types of building objects
 // console.log('--- Building Objects ---');
