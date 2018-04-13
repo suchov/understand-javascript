@@ -11,8 +11,11 @@ $('#login').on('click', function() {
 
   $('#logindiv').hide();
 
-  loginGrtr.setLang($('#lang').val()).HTMLGreeting('#greeting', true).log();
+  loginGrtr.setLang($('#lang').val()).HTMLGreeting('#greeting', true).log().coolGreet('#rockgreeting').throwConsole('shit!').log();
 });
+
+var g = G$();
+
 // //different types of building objects
 // console.log('--- Building Objects ---');
 // // set a prototype

@@ -5,24 +5,27 @@
   };
 
   // hidden within the scope of the IIFE and never directly accessible
-  var supportedLangs = ['en', 'es'];
+  var supportedLangs = ['en', 'es', 'fr'];
 
   // invormal greetings
   var greetings = {
     en: 'Hello',
-    es: 'Hola'
+    es: 'Hola',
+    fr: 'Fula'
   };
 
   // formal Greeting
   var formalGreetings = {
     en: 'Greetings',
-    es: 'Saludos'
+    es: 'Saludos',
+    fr: 'Fuflo'
   };
 
   // logger messages
   var logMessages = {
     en: 'Logged in',
-    es: 'Inicio sesion'
+    es: 'Inicio sesion',
+    fr: 'Fufel'
   };
 
   // prototype holds methods (to save memory space)
@@ -34,13 +37,21 @@
     validate: function() {
       // checks that is a valid language
       // references the externally inaccessible 'supportedLangs' within the closure
-      if(supportedLangs.indexOf(this.language) === -1){
+      if (supportedLangs.indexOf(this.language) === -1) {
         throw "Invalid language";
       }
     },
     // retrieve messages from object ty referring to properties using [] syntax
     greeting: function() {
       return greetings[this.language] + ' ' + this.firstName + '!';
+    },
+
+    rockGreeting: function() {
+      return this.firstName.toUpperCase() + ', YOU ROCK!'
+    },
+
+    coolGreeting: function(){
+      return this.firstName.toUpperCase() + ', YOU ARE COOL!'
     },
 
     formalGreeting: function() {
@@ -50,18 +61,34 @@
     greet: function(formal) {
       var msg;
       //if undefined of null it will be coerced to 'false'
-      if(formal) {
+      if (formal) {
         msg = this.formalGreeting();
       }
       else {
         msg = this.greeting();
       }
 
-      if(console) {
+      if (console) {
         console.log(msg);
       }
       // 'this' refers to the calling object at execution time
       // makes the method chainable
+      return this;
+    },
+    coolGreet: function(selector, rock) {
+      var msg;
+      if (rock) {
+        msg = this.rockGreeting();
+      }
+      else {
+        msg = this.coolGreeting();
+      }
+      if (console) {
+        console.log(msg);
+      }
+      // inject the message in the chosen place in the DOM
+      $(selector).html(msg);
+      // make chainable
       return this;
     },
     log: function(){
@@ -99,6 +126,9 @@
       $(selector).html(msg);
       // make chainable
       return this;
+    },
+    throwConsole: function(some) {
+      throw 'This is a message from the hell we have some methods here ' + some ;
     }
   };
   // the actual object is created here, allowing us to 'new' an object without calling 'new'
