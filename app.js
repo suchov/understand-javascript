@@ -7,7 +7,9 @@
 // support jQuery - include it to jQuery prototype?
 
 var g = G$('John', 'Shit');
-g.greet().setLang('es').greet(true);
+
+
+g.greet().setLang('es').greet(true).log();
 
 // //different types of building objects
 // console.log('--- Building Objects ---');
