@@ -1,31 +1,34 @@
-//different types of building objects
-console.log('--- Building Objects ---');
-// set a prototype
-// every function has a prototype property it is used when you use function as an object constructor(new)
-
-function Person(firstname, lastname) {
-
-  console.log(this);
-  this.firstname = firstname;
-  this.lastname = lastname;
-  console.log('This funtion is invoked');
-
-}
-
-Person.prototype.getFullName = function(){
-  return this.firstname + ' ' + this.lastname;
-};
-
-var john = new Person('John', 'Smith');
-console.log(john);
 
 
-var jane = new Person('Jane', 'Smith');
-console.log(jane);
 
-Person.prototype.getFormalFullName = function(){
-  return this.lastname + ', ' + this.firstname;
-};
+// //different types of building objects
+// console.log('--- Building Objects ---');
+// // set a prototype
+// // every function has a prototype property it is used when you use function as an object constructor(new)
+//
+// function Person(firstname, lastname) {
+//
+//   console.log(this);
+//   this.firstname = firstname;
+//   this.lastname = lastname;
+//   console.log('This funtion is invoked');
+//
+// }
+//
+// Person.prototype.getFullName = function(){
+//   return this.firstname + ' ' + this.lastname;
+// };
+//
+// var john = new Person('John', 'Smith');
+// console.log(john);
+//
+//
+// var jane = new Person('Jane', 'Smith');
+// console.log(jane);
+//
+// Person.prototype.getFormalFullName = function(){
+//   return this.lastname + ', ' + this.firstname;
+// };
 //form the efficiensy stendpoint it's better to add your methods to the prototype - it's create only one copy of the method
 
 // console.log('------ Object-Oriented JavaScript and Prototypal Inheritance -----');
