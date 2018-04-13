@@ -6,11 +6,13 @@
 // Easy to type structure 'G$()' structure.
 // support jQuery - include it to jQuery prototype?
 
-var g = G$('John', 'Shit');
+$('#login').on('click', function() {
+  var loginGrtr = G$('John', 'Smight');
 
+  $('#logindiv').hide();
 
-g.greet().setLang('es').greet(true).log();
-
+  loginGrtr.setLang($('#lang').val()).HTMLGreeting('#greeting', true).log();
+});
 // //different types of building objects
 // console.log('--- Building Objects ---');
 // // set a prototype
