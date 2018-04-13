@@ -47,11 +47,11 @@
     },
 
     rockGreeting: function() {
-      return this.firstName.toUpperCase() + ', YOU ROCK!'
+      return this.firstName.toUpperCase() + ', YOU ROCK!';
     },
 
     coolGreeting: function(){
-      return this.firstName.toUpperCase() + ', YOU ARE COOL!'
+      return this.firstName.toUpperCase() + ', YOU ARE COOL!';
     },
 
     formalGreeting: function() {
