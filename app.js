@@ -1,3 +1,8 @@
+// transpile - convert the syntax of one language to another
+// TypeScript - 
+
+
+
 // Building GREETR
 // When given a frist name, last name, and optional language,
 // it generates formal and informal greetings.
